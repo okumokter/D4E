@@ -1,0 +1,123 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:D4ECore.Monster.WPF"
+             xmlns:Monster="clr-namespace:D4ECore.Monster" x:Class="D4ECore.Monster.WPF.MonsterPatternControl"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.DataContext>
+        <Monster:MonsterPatternViewModel/>
+    </UserControl.DataContext>
+    <StackPanel>
+        <StackPanel Background="#FF3E4929" Orientation="Horizontal">
+            <TextBlock x:Name="textBlockName" Foreground="White" Text="{Binding Name}" FontFamily="Mentor Sans Std Black" FontSize="14" HorizontalAlignment="Left" Margin="0" Padding="5,3,0,0" Width="160" TextWrapping="Wrap"/>
+            <TextBlock x:Name="textBlockCategory" Foreground="White" Text="{Binding Category}" FontFamily="Mentor Sans Std Black" FontSize="14" HorizontalAlignment="Left" Margin="0" Padding="5,3,5,0" Width="138" TextWrapping="Wrap"/>
+        </StackPanel>
+        <StackPanel Background="#FF3E4929" Orientation="Horizontal">
+            <TextBlock x:Name="textBlockType" Foreground="White" Text="{Binding Type}" FontFamily="Mentor Sans Std" FontSize="10" HorizontalAlignment="Right" Grid.Row="1" Margin="0" Padding="5,1" Width="236"/>
+            <TextBlock x:Name="textBlockXP" Foreground="White" Text="{Binding XP}" FontFamily="Mentor Sans Std" FontSize="10" HorizontalAlignment="Right" Grid.Row="1" Margin="0" Padding="0,1,5,1" Width="62"/>
+        </StackPanel>        
+        <StackPanel>
+            <StackPanel Background="#FFE4E0CC">
+                <StackPanel Orientation="Horizontal">
+                    <Label x:Name="labelInitiative" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" HorizontalAlignment="Left" Width="43" Padding="5,2,0,0" Content="Initiative" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBoxInitiative" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" HorizontalAlignment="Left" Padding="5,2,0,0" Text="{Binding Initiative, Mode=OneWay}"/>
+                    <Label x:Name="labelSenses" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" HorizontalAlignment="Left" Width="35" Padding="5,2,0,0" Content="Senses" FontWeight="Bold" Margin="30,0,0,0"/>
+                    <TextBlock x:Name="textBlockSenses" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" HorizontalAlignment="Left" Width="170" Padding="5,2,0,0" Text="{Binding Senses, Mode=OneWay}" TextWrapping="Wrap"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label x:Name="labelHealthPoints" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" Padding="5,2,0,0" Content="HP" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlockHealthPoints" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" HorizontalAlignment="Left" Padding="5,2,0,0" Text="{Binding HealthPoints, Mode=OneWay}"/>
+                    <Label x:Name="labelBloodied" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" Padding="5,2,0,0" Content="Bloodied" FontWeight="Bold" Width="45" Visibility="{Binding BloodiedVisible, Mode=OneWay}"/>
+                    <TextBlock x:Name="textBlockBloodied" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" HorizontalAlignment="Left" Padding="5,2,0,0" Text="{Binding Bloodied, Mode=OneWay}" Visibility="{Binding BloodiedVisible, Mode=OneWay}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label x:Name="labelArmorClass" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" Padding="5,2,0,0" Content="AC" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlockArmorClass" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" HorizontalAlignment="Left" Padding="5,2,0,0" Text="{Binding ArmorClass, Mode=OneWay}"/>
+                    <Label x:Name="labelFortitude" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" Padding="5,2,0,0" Content="Fortitude" FontWeight="Bold" Width="46"/>
+                    <TextBlock x:Name="textBlockFortitude" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" HorizontalAlignment="Left" Padding="5,2,0,0" Text="{Binding Fortitude, Mode=OneWay}"/>
+                    <Label x:Name="labelReflex" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" Padding="5,2,0,0" Content="Reflex" FontWeight="Bold" Width="35"/>
+                    <TextBlock x:Name="textBlockReflexClass" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" HorizontalAlignment="Left" Padding="5,2,0,0" Text="{Binding Reflexes, Mode=OneWay}"/>
+                    <Label x:Name="labelWillpower" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" Padding="5,2,0,0" Content="Will" FontWeight="Bold" Width="28"/>
+                    <TextBlock x:Name="textBlockWillpower" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" HorizontalAlignment="Left" Padding="5,2,0,0" Text="{Binding Willpower, Mode=OneWay}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Visibility="{Binding SavingThrowsVisible, Mode=OneWay}">
+                    <Label x:Name="labelSavingThrows" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" Padding="5,2,0,0" Content="Saving Throws" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlockSavingThrows" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" HorizontalAlignment="Left" Padding="5,2,0,0" Text="{Binding SavingThrows, Mode=OneWay}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label x:Name="labelSpeed" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" Padding="5,2,0,0" Content="Speed" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlockSpeed" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" HorizontalAlignment="Left" Padding="5,2,0,0" Text="{Binding Movement, Mode=OneWay}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Visibility="{Binding ActionPointsVisible, Mode=OneWay}">
+                    <Label x:Name="labelActionPoints" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" Padding="5,2,0,0" Content="Action Points" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlockActionPoints" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" HorizontalAlignment="Left" Padding="5,2,0,0" Text="{Binding ActionPoints, Mode=OneWay}"/>
+                </StackPanel>
+            </StackPanel>
+            <ItemsControl x:Name="icPowers" Background="#FFE4E0CC" ItemsSource="{Binding Powers, Mode=OneWay}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <StackPanel Background="#FFC0BFA8" Orientation="Horizontal">
+                                <Label x:Name="labelAttackType" FontFamily="DNPGPF+DnD1Attack-Icon1" FontSize="10" Padding="0,-4,0,0" Margin="4,0,0,0" Content="{Binding AttackType, Mode=OneWay}" Visibility="{Binding AttackTypeVisibility, Mode=OneWay}"/>
+                                <Label x:Name="labelName" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" HorizontalAlignment="Left" Padding="5,2,0,0" Content="{Binding Name, Mode=OneWay}" FontWeight="Bold"/>
+                                <TextBlock x:Name="textBoxMainProperties" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" HorizontalAlignment="Left" Padding="5,2,0,0" Text="{Binding MainProperties, Mode=OneWay}" TextWrapping="Wrap"/>
+                            </StackPanel>
+                            <StackPanel Background="#FFE4E0CC">
+                                <TextBlock x:Name="textBoxDetail" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" HorizontalAlignment="Left" Padding="5,2,0,0" Text="{Binding Detail, Mode=OneWay}" Width="267" TextWrapping="Wrap" />
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            <ItemsControl x:Name="icFeats" Background="#FFE4E0CC" ItemsSource="{Binding Feats, Mode=OneWay}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <StackPanel Background="#FFC0BFA8" Orientation="Horizontal">
+                                <Label x:Name="labelName" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" HorizontalAlignment="Left" Padding="5,2,0,0" Content="{Binding Name, Mode=OneWay}" FontWeight="Bold"/>
+                                <TextBlock x:Name="textBoxMainProperties" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" HorizontalAlignment="Left" Padding="5,2,0,0" Text="{Binding MainProperties, Mode=OneWay}" TextWrapping="Wrap"/>
+                            </StackPanel>
+                            <StackPanel Background="#FFE4E0CC">
+                                <TextBlock x:Name="textBoxDetail" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" HorizontalAlignment="Left" Padding="5,2,0,0" Text="{Binding Detail, Mode=OneWay}" Width="267" TextWrapping="Wrap" />
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            <StackPanel x:Name="StackPanelPowers" Background="#FFE4E0CC">
+            </StackPanel>
+            <StackPanel Background="#FFC0BFA8">
+                <StackPanel Orientation="Horizontal">
+                    <Label x:Name="labelAlignmentCaption" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" Padding="5,2,0,0" Content="Alignment" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlockAlignment" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" HorizontalAlignment="Left" Padding="5,2,0,0" Text="{Binding Alignment, Mode=OneWay}" Width="82" TextWrapping="Wrap"/>
+                    <Label x:Name="labelLanguagesCaption" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" Padding="5,2,0,0" Content="Languages" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlockLanguages" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" HorizontalAlignment="Left" Padding="5,2,0,0" Text="{Binding Languages, Mode=OneWay}" Width="120" TextWrapping="Wrap"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label x:Name="labelSkillsCaption" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" Padding="5,2,0,0" Content="Skills" FontWeight="Bold" Visibility="{Binding SkillsVisible, Mode=OneWay}"/>
+                    <TextBlock x:Name="textBlockSkills" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" HorizontalAlignment="Left" Padding="5,2,0,0" Text="{Binding Skills, Mode=OneWay}" TextWrapping="Wrap" Width="267" Visibility="{Binding SkillsVisible, Mode=OneWay}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label x:Name="labelStrength" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" Padding="5,2,0,0" Content="Str" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlockStrength" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" HorizontalAlignment="Left" Padding="5,2,0,0" Text="{Binding Strength, Mode=OneWay}"/>
+                    <Label x:Name="labelDexterity" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" Padding="5,2,0,0" Content="Dex" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlockDexterity" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" HorizontalAlignment="Left" Padding="5,2,0,0" Text="{Binding Dexterity, Mode=OneWay}"/>
+                    <Label x:Name="labelWisdom" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" Padding="5,2,0,0" Content="Wis" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlockWisdom" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" HorizontalAlignment="Left" Padding="5,2,0,0" Text="{Binding Wisdom, Mode=OneWay}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label x:Name="labelConstitution" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" Padding="5,2,0,0" Content="Con" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlocklConstitution" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" HorizontalAlignment="Left" Padding="5,2,0,0" Text="{Binding Constitution, Mode=OneWay}"/>
+                    <Label x:Name="labelIntelligence" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" Padding="5,2,0,0" Content="Int" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlockIntelligence" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" HorizontalAlignment="Left" Padding="5,2,0,0" Text="{Binding Intelligence, Mode=OneWay}"/>
+                    <Label x:Name="labelCharisma" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" Padding="5,2,0,0" Content="Cha" FontWeight="Bold"/>
+                    <TextBlock x:Name="textBlockCharisma" Foreground="Black" FontFamily="Mentor Sans Std" FontSize="9" HorizontalAlignment="Left" Padding="5,2,0,0" Text="{Binding Charisma, Mode=OneWay}"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Height="100"/>
+    </StackPanel>
+</UserControl>

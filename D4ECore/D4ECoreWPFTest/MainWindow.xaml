@@ -1,0 +1,19 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:D4ECoreWPFTest"
+        xmlns:WPF="clr-namespace:D4ECore.Monster.WPF;assembly=D4ECore" x:Class="D4ECoreWPFTest.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+
+        <WPF:MonsterPatternControl x:Name="MonsterFrame" HorizontalAlignment="Left" Width="288" Margin="0,0,0,35"/>
+        <Button x:Name="button" Content="Random" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="75" Click="button_Click"/>
+        <Button x:Name="button_Copy" Content="By keyword" Margin="0,0,90,10" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Click="button_Copy_Click"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Right" Margin="0,0,170,10" TextWrapping="Wrap" Text="Aboleth Slime Mage" Width="173" Height="20" VerticalAlignment="Bottom" KeyDown="textBox_KeyDown"/>
+        <Button x:Name="button1" Content="Benchmark" HorizontalAlignment="Left" Margin="10,0,0,10" Width="75" Height="20" VerticalAlignment="Bottom" Click="button1_Click"/>
+
+    </Grid>
+</Window>

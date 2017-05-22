@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{695F3719-0020-4031-B231-81389B737DF8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>D4ECore</RootNamespace>
+    <AssemblyName>D4ECore</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Types\AbilityScore.cs" />
+    <Compile Include="Common\Types\Alignment.cs" />
+    <Compile Include="Common\Types\Defense.cs" />
+    <Compile Include="Common\Types\EffectType.cs" />
+    <Compile Include="Common\Types\Extensions\SignedIntegerExtension.cs" />
+    <Compile Include="Common\Types\Language.cs" />
+    <Compile Include="Common\Types\PowerAction.cs" />
+    <Compile Include="Common\Types\PowerAreaAttack.cs" />
+    <Compile Include="Common\Types\PowerAttack.cs" />
+    <Compile Include="Common\Types\PowerAttackType.cs" />
+    <Compile Include="Common\Types\PowerCategory.cs" />
+    <Compile Include="Common\Types\PowerCloseAttack.cs" />
+    <Compile Include="Common\Types\PowerMeleeAttack.cs" />
+    <Compile Include="Common\Types\PowerRangedAttack.cs" />
+    <Compile Include="Common\Types\PowerRecharge.cs" />
+    <Compile Include="Common\Types\Size.cs" />
+    <Compile Include="Common\Types\Skill.cs" />
+    <Compile Include="Monster\MonsterPattern.cs" />
+    <Compile Include="Monster\MonsterPatternFeatViewModel.cs" />
+    <Compile Include="Monster\MonsterPatternLoader.cs" />
+    <Compile Include="Monster\MonsterPatternPowerViewModel.cs" />
+    <Compile Include="Monster\MonsterPatternViewModel.cs" />
+    <Compile Include="Monster\Types\MonsterAbilityScores.cs" />
+    <Compile Include="Monster\Types\MonsterAlignment.cs" />
+    <Compile Include="Monster\Types\MonsterAttackPower.cs" />
+    <Compile Include="Monster\Types\MonsterDefenses.cs" />
+    <Compile Include="Monster\Types\MonsterFeat.cs" />
+    <Compile Include="Monster\Types\MonsterLanguages.cs" />
+    <Compile Include="Monster\Types\MonsterMovement.cs" />
+    <Compile Include="Monster\Types\MonsterMovementType.cs" />
+    <Compile Include="Monster\Types\MonsterOrigin.cs" />
+    <Compile Include="Monster\Types\MonsterPower.cs" />
+    <Compile Include="Monster\Types\MonsterRole.cs" />
+    <Compile Include="Monster\Types\MonsterSavingThrows.cs" />
+    <Compile Include="Monster\Types\MonsterSenses.cs" />
+    <Compile Include="Monster\Types\MonsterSkills.cs" />
+    <Compile Include="Monster\Types\MonsterType.cs" />
+    <Compile Include="Monster\Types\MonsterUtilityPower.cs" />
+    <Compile Include="Monster\WPF\MonsterPatternControl.xaml.cs">
+      <DependentUpon>MonsterPatternControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Monster\WPF\MonsterPatternControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
