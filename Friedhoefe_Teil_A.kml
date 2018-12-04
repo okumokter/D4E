@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Folder><name>Friedhoefe</name>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>6.79184599622326,51.3348157726033 6.79184309503393,51.3348373021526 6.79181119102082,51.334852888655 6.79180917791268,51.3348649019024 6.79183024120538,51.334862780984 6.7918501128554,51.3348585690962 6.79186069878362,51.3348504048373 6.79187328790322,51.3348125100587 6.79184599622326,51.3348157726033</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+</Folder>
+</Document></kml>
